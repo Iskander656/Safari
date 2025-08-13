@@ -1,0 +1,9 @@
+@extends('layouts.app')
+@section('content')
+@include('layouts.hero')
+@include('layouts.features')
+@include('layouts.testimonials')
+@include('layouts.featured')
+@include('layouts.callto')
+@include('layouts.footer')
+@endsection
