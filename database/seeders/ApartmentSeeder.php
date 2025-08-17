@@ -29,7 +29,7 @@ class ApartmentSeeder extends Seeder
                 'floor' => fake()->numberBetween(1,4),
                 'total_floors' => fake()->numberBetween(1,4),
                 'description' => 'Уютная квартира в центре города',
-                'image' => 'public/img/1',
+                'image' => 'img/3.webp',
             ],
         ];
 

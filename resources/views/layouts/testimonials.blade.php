@@ -8,7 +8,7 @@
                         <p class="mb-3">"Safari made finding my dream apartment so easy! I found exactly what I wanted
                             within days."</p>
                         <div class="d-flex align-items-center">
-                            <img src="https://via.placeholder.com/50" class="rounded-circle me-3" alt="Client 1">
+                            <img src="{{ asset('img/t4.jpeg') }}" class="rounded-circle me-3" alt="Client 1">
                             <div>
                                 <h6 class="fw-bold mb-0">Aynur K.</h6>
                                 <small class="text-muted">Ashgabat</small>
@@ -21,7 +21,7 @@
                         <p class="mb-3">"I loved the variety of listings and the detailed descriptions. Highly
                             recommend Safari!"</p>
                         <div class="d-flex align-items-center">
-                            <img src="https://via.placeholder.com/50" class="rounded-circle me-3" alt="Client 2">
+                            <img src="{{ asset('img/t4.jpeg') }}" class="rounded-circle me-3" alt="Client 2">
                             <div>
                                 <h6 class="fw-bold mb-0">Serdar M.</h6>
                                 <small class="text-muted">Mary</small>
@@ -34,7 +34,7 @@
                         <p class="mb-3">"Excellent service and great support team. They helped me every step of the
                             way!"</p>
                         <div class="d-flex align-items-center">
-                            <img src="https://via.placeholder.com/50" class="rounded-circle me-3" alt="Client 3">
+                            <img src="{{ asset('img/t4.jpeg') }}" class="rounded-circle me-3" alt="Client 3">
                             <div>
                                 <h6 class="fw-bold mb-0">Leyla A.</h6>
                                 <small class="text-muted">Turkmenabat</small>

@@ -70,11 +70,5 @@
         </div>
     </section>
 
-    <section class="text-white text-center py-5" style="background: linear-gradient(90deg, #38ef7d, #11998e);">
-        <div class="container">
-            <h2 class="fw-bold mb-3">Can't find what you're looking for?</h2>
-            <p class="mb-4">Contact our team and we’ll help you find the perfect apartment.</p>
-            <a href="#" class="btn btn-light btn-lg">Contact Us</a>
-        </div>
-    </section>
+    @include('layouts.footer')
 @endsection
