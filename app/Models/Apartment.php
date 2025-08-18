@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Room;
+use App\Models\User;
 use App\Models\HomeType;
 use App\Models\Location;
 use App\Models\Renovation;
@@ -12,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 class Apartment extends Model
 {
         protected $fillable = [
+        'user_id',
         'title',
         'location_id',
         'sublocation_id',
@@ -28,6 +30,11 @@ class Apartment extends Model
     protected $guarded = [
         'id',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function location()
     {

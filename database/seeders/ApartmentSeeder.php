@@ -8,6 +8,7 @@ use App\Models\Location;
 use App\Models\Apartment;
 use App\Models\Renovation;
 use App\Models\Sublocation;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -20,6 +21,7 @@ class ApartmentSeeder extends Seeder
     {
         $objs = [
             [
+                'user_id' => User::inRandomOrder()->first()->id,
                 'title' => '3 комнаты центр',
                 'location_id' => Location::inRandomOrder()->first()->id,
                 'sublocation_id' => Sublocation::inRandomOrder()->first()->id,
@@ -41,6 +43,7 @@ class ApartmentSeeder extends Seeder
 
         foreach($objs as $obj){
             Apartment::create([
+                'user_id' => $obj['user_id'],
                 'title' => $obj['title'],
                 'location_id' => $obj['location_id'],
                 'sublocation_id' => $obj['sublocation_id'],

@@ -7,6 +7,7 @@ use App\Models\Sublocation;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Database\Seeders\RoomSeeder;
+use Database\Seeders\UserSeeder;
 use Database\Seeders\HomeTypeSeeder;
 use Database\Seeders\LocationSeeder;
 use Database\Seeders\ApartmentSeeder;
@@ -21,6 +22,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
+            UserSeeder::class,
             LocationSeeder::class,
             SublocationSeeder::class,
             RoomSeeder::class,
