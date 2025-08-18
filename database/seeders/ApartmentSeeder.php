@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Apartment;
-use App\Models\Location;
-use App\Models\Renovation;
 use App\Models\Room;
+use App\Models\HomeType;
+use App\Models\Location;
+use App\Models\Apartment;
+use App\Models\Renovation;
 use App\Models\Sublocation;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -28,7 +29,12 @@ class ApartmentSeeder extends Seeder
                 'area' => 'Центр города',
                 'floor' => fake()->numberBetween(1,4),
                 'total_floors' => fake()->numberBetween(1,4),
+                'elevator' => fake()->boolean(),
+                'exchange' => fake()->boolean(),
+                'parking' => fake()->boolean(),
+                'home_type_id' => HomeType::inRandomOrder()->first()->id,
                 'description' => 'Уютная квартира в центре города',
+                'phone' => fake()->phoneNumber(),
                 'image' => 'img/3.webp',
             ],
         ];
@@ -44,7 +50,12 @@ class ApartmentSeeder extends Seeder
                 'area' => $obj['area'],
                 'floor' => $obj['floor'],
                 'total_floors' => $obj['total_floors'],
+                'elevator' => $obj['elevator'],
+                'exchange' => $obj['exchange'],
+                'parking' => $obj['parking'],
+                'home_type_id' => $obj['home_type_id'],
                 'description' => $obj['description'],
+                'phone' => $obj['phone'],
                 'image' => $obj['image'],
             ]);
         }

@@ -7,6 +7,8 @@ use App\Models\Location;
 use App\Models\Apartment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\HomeType;
+use App\Models\Sublocation;
 
 class ApartmentsController extends Controller
 {
@@ -32,8 +34,16 @@ class ApartmentsController extends Controller
     return view('apartments.index', [
         'apartments' => $apartments,
         'locations' => Location::all(),
-        'rooms' => Room::all()
+        'rooms' => Room::all(),
+        'sublocations' => Sublocation::all(),
+        'homeTypes' => HomeType::all(),
     ]);
 }
+    public function show($id)
+    {
+        $apartment = Apartment::findOrFail($id);
+        $apartment = Apartment::with(['location', 'sublocation', 'room', 'renovation',])->findOrFail($id);
+        return view('apartments.show', compact('apartment'));
+    }
 
 }

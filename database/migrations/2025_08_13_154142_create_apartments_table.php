@@ -18,11 +18,16 @@ return new class extends Migration
             $table->foreignId('sublocation_id')->constrained()->onDelete('cascade');
             $table->foreignId('room_id')->constrained()->onDelete('cascade');
             $table->foreignId('renovation_id')->constrained()->onDelete('cascade');
+            $table->foreignId('home_type_id')->constrained()->onDelete('cascade');
             $table->decimal('price');
             $table->string('area');
             $table->integer('floor');
+            $table->boolean('elevator');
+            $table->boolean('exchange');
+            $table->boolean('parking');
             $table->integer('total_floors');
             $table->text('description')->nullable();
+            $table->string('phone');
             $table->string('image');
             $table->timestamps();
         });

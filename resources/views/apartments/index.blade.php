@@ -57,7 +57,7 @@
                                 <h5 class="card-title">{{ $apartment->title }}</h5>
                                 <p class="card-text">{{ Str::limit($apartment->description, 80) }}</p>
                                 <p class="fw-bold text-success mb-2">{{ number_format($apartment->price) }} TMT</p>
-                                <a href="#" class="btn btn-success">View Details</a>
+                                <a href="{{ route('apartments.show', $apartment['id'] ?? $apartment->id) }}" class="btn btn-success">View Details</a>
                             </div>
                         </div>
                     </div>
