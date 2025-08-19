@@ -29,7 +29,7 @@ return new class extends Migration
             $table->integer('total_floors');
             $table->text('description')->nullable();
             $table->string('phone');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

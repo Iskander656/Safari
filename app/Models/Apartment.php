@@ -17,13 +17,18 @@ class Apartment extends Model
         'title',
         'location_id',
         'sublocation_id',
+        'home_type_id',
         'room_id',
         'renovation_id',
         'price',
         'area',
         'floor',
+        'elevator',
+        'exchange',
+        'parking',
         'total_floors',
         'description',
+        'phone',
         'image',
     ];
 

@@ -19,8 +19,8 @@
             <div class="collapse navbar-collapse" id="adminNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.apartments.index') }}">Apartments</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.apartments.index') }}">Apartments</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
                 </ul>
             </div>
         </div>

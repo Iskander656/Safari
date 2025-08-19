@@ -36,6 +36,57 @@
                         </select>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label fw-bold">Floor</label>
+                        <input type="number" name="floor" class="form-control"
+                            value="{{ old('floor', $apartment->floor) }}">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label fw-bold">Total Floors</label>
+                        <input type="number" name="total_floors" class="form-control"
+                            value="{{ old('total_floors', $apartment->total_floors) }}">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label fw-bold">Phone</label>
+                        <input type="text" name="phone" class="form-control"
+                            value="{{ old('phone', $apartment->phone) }}">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label fw-bold">Elevator</label>
+                        <select name="elevator" class="form-select">
+                            <option value="0" {{ old('elevator', $apartment->elevator) == 0 ? 'selected' : '' }}>No
+                            </option>
+                            <option value="1" {{ old('elevator', $apartment->elevator) == 1 ? 'selected' : '' }}>Yes
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label fw-bold">Parking</label>
+                        <select name="parking" class="form-select">
+                            <option value="0" {{ old('parking', $apartment->parking) == 0 ? 'selected' : '' }}>No
+                            </option>
+                            <option value="1" {{ old('parking', $apartment->parking) == 1 ? 'selected' : '' }}>Yes
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label fw-bold">Exchange</label>
+                        <select name="exchange" class="form-select">
+                            <option value="0" {{ old('exchange', $apartment->exchange) == 0 ? 'selected' : '' }}>No
+                            </option>
+                            <option value="1" {{ old('exchange', $apartment->exchange) == 1 ? 'selected' : '' }}>Yes
+                            </option>
+                        </select>
+                    </div>
+                </div>
 
                 <div class="row">
                     <div class="col-md-6 mb-3">
@@ -76,6 +127,22 @@
                 <div class="mb-3">
                     <label class="form-label fw-bold">Description</label>
                     <textarea name="description" class="form-control" rows="4">{{ $apartment->description }}</textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Image</label>
+                    <input type="file" name="image" class="form-control">
+                </div>
+
+                @if ($apartment->image)
+                    <div class="mb-3">
+                        <img src="{{ asset('storage/' . $apartment->image) }}" alt="Apartment Image" width="150">
+                    </div>
+                @endif
+                
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Change Image</label>
+                    <input type="file" name="image" class="form-control">
                 </div>
 
                 <button type="submit" class="btn btn-success">Update Apartment</button>

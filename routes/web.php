@@ -14,7 +14,6 @@ use App\Http\Middleware\RoleMiddleware;
 | Public Routes
 |--------------------------------------------------------------------------
 */
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/contact', fn() => view('contact.index'))->name('contact');
@@ -37,20 +36,22 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middl
 
 /*
 |--------------------------------------------------------------------------
-| User Routes (role: user, admin)
+| User & Admin Routes
 |--------------------------------------------------------------------------
 */
-Route::middleware([RoleMiddleware::class . ':admin'])->group(function() {
+// Admin-only
+Route::middleware([RoleMiddleware::class . ':admin'])->group(function () {
     Route::get('/admin', [DashboardController::class, 'index']);
 });
 
-Route::middleware([RoleMiddleware::class . ':user,admin'])->group(function() {
+// User + Admin
+Route::middleware([RoleMiddleware::class . ':user,admin'])->group(function () {
     Route::resource('my-apartments', ApartmentController::class);
 });
 
 /*
 |--------------------------------------------------------------------------
-| Admin Routes (role: admin only)
+| Admin Panel Routes
 |--------------------------------------------------------------------------
 */
 Route::prefix('admin')->name('admin.')->middleware([RoleMiddleware::class . ':admin'])->group(function () {

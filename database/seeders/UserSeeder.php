@@ -2,34 +2,35 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
+        // Admin
         User::create([
-            'name' => 'Admin',
-            'email' => 'admin@safari.com',
-            'password' => Hash::make('Qwerty6677'),
+            'name' => 'Admin User',
+            'email' => 'admin@safari.test',
+            'password' => Hash::make('password'),
             'role' => 'admin',
         ]);
+
+        // Normal User
         User::create([
-            'name' => 'Jhon User',
-            'email' => 'user@safari.com',
-            'password' => Hash::make('Qwerty8899'),
+            'name' => 'Normal User',
+            'email' => 'user@safari.test',
+            'password' => Hash::make('password'),
             'role' => 'user',
         ]);
+
+        // Guest (just in case)
         User::create([
-            'name' => 'Guest',
-            'email' => 'guest@safari.com',
-            'password' => Hash::make('Qwerty1122'),
+            'name' => 'Guest User',
+            'email' => 'guest@safari.test',
+            'password' => Hash::make('password'),
             'role' => 'guest',
         ]);
     }
